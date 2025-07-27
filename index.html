@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ercihan Turizm - Site Yenileniyor</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            max-width: 700px;
+            width: 90%;
+            position: relative;
+            border: 1px solid #e9ecef;
+            margin: 20px;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .logo {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .maintenance-icon {
+            font-size: 3rem;
+            margin: 30px 0;
+            color: #1e3c72;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #e9ecef;
+            border-radius: 2px;
+            margin: 40px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            border-radius: 2px;
+            animation: progress 3s ease-in-out infinite;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #1e3c72;
+            text-align: left;
+        }
+
+        .feature h3 {
+            color: #1e3c72;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .feature p {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border-left: 4px solid #2a5298;
+            text-align: left;
+        }
+
+        .contact-info h3 {
+            color: #2a5298;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 15px 0;
+            color: #6c757d;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .contact-item span:first-child {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid #e9ecef;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+                margin: 10px;
+                width: 95%;
+            }
+            
+            .logo img {
+                height: 60px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin: 40px 0;
+            }
+            
+            .feature {
+                padding: 20px;
+            }
+            
+            .contact-info {
+                padding: 25px;
+                margin-top: 30px;
+            }
+            
+            .contact-item {
+                font-size: 0.9rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 15px;
+                margin: 5px;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .feature {
+                padding: 18px;
+            }
+            
+            .contact-info {
+                padding: 20px;
+            }
+            
+            .contact-item {
+                font-size: 0.85rem;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="assets/ercihanlogo-transparent.png" alt="Ercihan Turizm Logo">
+        </div>
+        
+        <div class="maintenance-icon">🔧</div>
+        
+        <h1>Web Sitemiz Yenileniyor</h1>
+        
+        <p class="subtitle">
+            Daha profesyonel ve kullanıcı dostu bir deneyim sunabilmek için 
+            web sitemizi yeniliyoruz. Çok yakında yeni ve gelişmiş sitemizle 
+            hizmetinizde olacağız!
+        </p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        
+        <div class="features">
+           
+            <div class="feature">
+                <h3>📱 Mobil Uyumlu</h3>
+                <p>Tüm cihazlarda mükemmel görünüm ve performans</p>
+            </div>
+            <div class="feature">
+                <h3>⚡ Hızlı Yükleme</h3>
+                <p>Optimize edilmiş kod ile hızlı sayfa yükleme</p>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <h3>📞 İletişim Bilgileri</h3>
+            <div class="contact-item">
+                <span>📧</span>
+                <span>info@cihanturizm.com</span>
+            </div>
+            <div class="contact-item">
+                <span>📱</span>
+                <span>+90 212 506 57 74</span>
+            </div>
+            <div class="contact-item">
+                <span>📍</span>
+                <span>Halide Edip Adıvar Mah. Darülaceze Cd. No:19/4,<br>Elmas Plaza, Şişli, Istanbul, Turkey 34382</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 Cihan Turizm. Tüm hakları saklıdır.</p>
+            <p>Yakında tekrar görüşmek üzere! 👋</p>
+        </div>
+    </div>
+</body>
+</html> 
